@@ -71,5 +71,20 @@ $(document).ready(function(){
             }, 600);
         });
     });
+
+    $('#formulario-pedido').submit(function(evento){
+        evento.preventDefault();
+
+        switch(true){
+            case ($('#name').val().length == 0):
+                throw new Error('Digite o nome');
+            break;
+        }
+        /**
+         *         if($('#name').val().length == 0){
+                        throw new Error('Digite o nome');
+                    }
+         */
+    })
 })
 
