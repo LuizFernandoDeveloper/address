@@ -57,7 +57,13 @@ $(document).ready(function(){
             const cidade = json.localidade;
             const estado  = json.uf;
             const address = `${logradouro}, ${bairro}-${cidade}-${estado}`;
-
+        })
+        .catch(function(error){
+            address = "";
+            $(botao).find('span').addClass('d-none');
+            $(botao).find('i').removeClass('d-none');
+        })
+        .finally(function(){
             setTimeout(function(){
                 $('#address').val(address);
                 $(botao).find('span').addClass('d-none');
